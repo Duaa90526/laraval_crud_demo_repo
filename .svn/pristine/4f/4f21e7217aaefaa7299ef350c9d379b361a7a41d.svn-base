@@ -1,0 +1,419 @@
+//Zoobia (6 Apr 2022)
+
+INSERT INTO `thesalesforce`.`companies` (`company_name`, `company_category`, `domain_name`, `email_address`, `no_of_users`, `two_factor`, `status`, `created_at`, `prefix`) 
+VALUES ('Quadri', 'Finance', 'quadri@gmail.com', 'tariq@uhfsolutions.com' , 4  , 'no', NULL, 'tariq@uhfsolutions.com', 'quadri'); 
+
+INSERT INTO `thesalesforce`.`company_areas` (`record_id`, `company_id`, `region_id`, `area_name`, `status`) 
+VALUES (NULL, '59', '4', 'North Nazimabad', 'active'); 
+
+INSERT INTO `thesalesforce`.`company_branches` (`record_id`, `company_id`, `region_id`, `area_id`, `branch_code`, `branch_name`, `bm_name`, `address`, `phone_number`, `latitude`, `longitude`, `city`, `status`, `created_on`, `created_by`, `updated_on`)
+ VALUES (NULL, '59', '4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'active', NULL, '2022-04-03 09:26:11', NULL); 
+
+INSERT INTO `thesalesforce`.`company_designations` (`record_id`, `company_id`, `role_name`, `status`, `created_on`, `created_by`, `updated_on`) VALUES (NULL, '59', 'Sales Admin', 'active', NULL, NULL, NULL); 
+INSERT INTO `thesalesforce`.`company_designations` (`record_id`, `company_id`, `role_name`, `status`, `created_on`, `created_by`, `updated_on`) VALUES (NULL, '59', 'Upper Sales Manager', 'active', NULL, NULL, NULL); 
+INSERT INTO `thesalesforce`.`company_designations` (`record_id`, `company_id`, `role_name`, `status`, `created_on`, `created_by`, `updated_on`) VALUES (NULL, '59', 'Sales Manager', 'active', NULL, NULL, NULL); 
+INSERT INTO `thesalesforce`.`company_designations` (`record_id`, `company_id`, `role_name`, `status`, `created_on`, `created_by`, `updated_on`) VALUES (NULL, '59', 'Sales Officer', 'active', NULL, NULL, NULL); 
+
+INSERT INTO `thesalesforce`.`users` (`user_id`, `company_id`, `login_id`, `emp_code`, `emp_id`, `password`, `first_name`, `last_name`, `email_address`, `phone_number`, `gender`, `profile_img`, `date_of_birth`, `user_type`, `designation_id`, `branch_id`, `pb_code`, `land_line`, `ip`, `date_of_joining`, `date_of_resign`, `date_of_transfer`, `is_resigned`, `creation_date`, `android_push_id`, `apple_push_id`, `num_of_login_attempts`, `last_login_time`, `is_new_user`, `last_change_password_date`, `token`, `is_live`, `temp_key`, `device_id`, `parallel_to`, `email_verification_at`, `email_verification_status`, `finger_print_id`, `activation_code`, `status`, `comments`) VALUES (NULL, '59', 'quadrimaker', '10111', '101111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'no', NULL, NULL, NULL, NULL, NULL, 'yes', NULL, NULL, '0', '0', NULL, NULL, NULL, 'not verified', NULL, NULL, '1', NULL); 
+UPDATE `thesalesforce`.`users` SET `password` = '$2y$10$JJlqoe4Kd6ng3pVkzqdKjOkhbOJJBKfETPHnNhvE2l6ec2BFWn2Au' WHERE `user_id` = '291'; 
+UPDATE `thesalesforce`.`users` SET `is_new_user` = 'no' WHERE `user_id` = '291'; 
+UPDATE `thesalesforce`.`users` SET `last_change_password_date` = '2022-04-03 09:31:23' WHERE `user_id` = '291'; 
+
+UPDATE `users` SET `user_type` = '100001' ,`designation_id` = '45' ,`branch_id` = '1704' WHERE `user_id` = '291'; 
+UPDATE `users` SET `last_change_password_date` = '2022-04-03 09:41:51' WHERE `user_id` = '291'; 
+INSERT INTO `users` (`user_id`, `company_id`, `login_id`, `emp_code`, `emp_id`, `password`, `first_name`, `last_name`, `email_address`, `phone_number`, `gender`, `profile_img`, `date_of_birth`, `user_type`, `designation_id`, `branch_id`, `pb_code`, `land_line`, `ip`, `date_of_joining`, `date_of_resign`, `date_of_transfer`, `is_resigned`, `creation_date`, `android_push_id`, `apple_push_id`, `num_of_login_attempts`, `last_login_time`, `is_new_user`, `last_change_password_date`, `token`, `is_live`, `temp_key`, `device_id`, `parallel_to`, `email_verification_at`, `email_verification_status`, `finger_print_id`, `activation_code`, `status`, `comments`) VALUES (NULL, '59', 'Zoobia', '10101', '10101', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'no', NULL, NULL, NULL, NULL, NULL, 'yes', NULL, NULL, '0', '0', NULL, NULL, NULL, 'not verified', NULL, NULL, '1', NULL); 
+UPDATE `users` SET `password` = '$2y$10$JJlqoe4Kd6ng3pVkzqdKjOkhbOJJBKfETPHnNhvE2l6ec2BFWn2Au' ,`first_name` = 'Zoobia' ,`email_address` = 'zoobia@quadri.com' WHERE `user_id` = '292'; 
+UPDATE `users` SET `phone_number` = '03212345678' ,`user_type` = '100002' ,`designation_id` = '56' WHERE `user_id` = '292'; 
+UPDATE `users` SET `branch_id` = '1704' WHERE `user_id` = '292'; 
+UPDATE `users` SET `creation_date` = '2022-04-04 09:39:03' WHERE `user_id` = '291'; 
+UPDATE `users` SET `creation_date` = '2022-04-04 09:39:03' WHERE `user_id` = '292'; 
+UPDATE `users` SET `is_new_user` = 'no' WHERE `user_id` = '292'; 
+UPDATE `users` SET `last_change_password_date` = '2022-04-03 09:41:51' WHERE `user_id` = '292'; 
+INSERT INTO `users` (`user_id`, `company_id`, `login_id`, `emp_code`, `emp_id`, `password`, `first_name`, `last_name`, `email_address`, `phone_number`, `gender`, `profile_img`, `date_of_birth`, `user_type`, `designation_id`, `branch_id`, `pb_code`, `land_line`, `ip`, `date_of_joining`, `date_of_resign`, `date_of_transfer`, `is_resigned`, `creation_date`, `android_push_id`, `apple_push_id`, `num_of_login_attempts`, `last_login_time`, `is_new_user`, `last_change_password_date`, `token`, `is_live`, `temp_key`, `device_id`, `parallel_to`, `email_verification_at`, `email_verification_status`, `finger_print_id`, `activation_code`, `status`, `comments`) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'no', NULL, NULL, NULL, NULL, NULL, 'yes', '2022-04-03 09:41:51', NULL, '0', '0', NULL, NULL, NULL, 'not verified', NULL, NULL, '1', NULL); 
+INSERT INTO `users` (`user_id`, `company_id`, `login_id`, `emp_code`, `emp_id`, `password`, `first_name`, `last_name`, `email_address`, `phone_number`, `gender`, `profile_img`, `date_of_birth`, `user_type`, `designation_id`, `branch_id`, `pb_code`, `land_line`, `ip`, `date_of_joining`, `date_of_resign`, `date_of_transfer`, `is_resigned`, `creation_date`, `android_push_id`, `apple_push_id`, `num_of_login_attempts`, `last_login_time`, `is_new_user`, `last_change_password_date`, `token`, `is_live`, `temp_key`, `device_id`, `parallel_to`, `email_verification_at`, `email_verification_status`, `finger_print_id`, `activation_code`, `status`, `comments`) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'no', NULL, NULL, NULL, NULL, NULL, 'yes', '2022-04-03 09:41:51', NULL, '0', '0', NULL, NULL, NULL, 'not verified', NULL, NULL, '1', NULL); 
+UPDATE `users` SET `is_new_user` = 'no' WHERE `user_id` = '293'; 
+UPDATE `users` SET `is_new_user` = 'no' WHERE `user_id` = '294'; 
+UPDATE `users` SET `creation_date` = '2022-04-04 09:39:03' WHERE `user_id` = '293'; 
+UPDATE `users` SET `creation_date` = '2022-04-04 09:39:03' WHERE `user_id` = '294'; 
+UPDATE `users` SET `designation_id` = '46' WHERE `user_id` = '292'; 
+UPDATE `users` SET `designation_id` = '47' WHERE `user_id` = '293'; 
+UPDATE `users` SET `designation_id` = '48' WHERE `user_id` = '294'; 
+UPDATE `users` SET `branch_id` = '1704' WHERE `user_id` = '293'; 
+UPDATE `users` SET `branch_id` = '1704' WHERE `user_id` = '294'; 
+UPDATE `users` SET `user_type` = '100003' WHERE `user_id` = '293'; 
+UPDATE `users` SET `user_type` = '100004' WHERE `user_id` = '294'; 
+UPDATE `users` SET `phone_number` = '03212345678' WHERE `user_id` = '293'; 
+UPDATE `users` SET `phone_number` = '03212345678' WHERE `user_id` = '294'; 
+UPDATE `users` SET `user_type` = '100003' WHERE `user_id` = '292'; 
+UPDATE `users` SET `user_type` = '100002' WHERE `user_id` = '293'; 
+UPDATE `users` SET `first_name` = 'Dawn' ,`email_address` = 'dawn@gmail.com' WHERE `user_id` = '293'; 
+UPDATE `users` SET `password` = '$2y$10$JJlqoe4Kd6ng3pVkzqdKjOkhbOJJBKfETPHnNhvE2l6ec2BFWn2Au' WHERE `user_id` = '293'; 
+UPDATE `users` SET `emp_id` = '101102' WHERE `user_id` = '293'; 
+UPDATE `users` SET `emp_id` = '101103' WHERE `user_id` = '294'; 
+UPDATE `users` SET `password` = '$2y$10$JJlqoe4Kd6ng3pVkzqdKjOkhbOJJBKfETPHnNhvE2l6ec2BFWn2Au' ,`first_name` = 'Umair' WHERE `user_id` = '294'; 
+UPDATE `users` SET `email_address` = 'umair@gmail.com' WHERE `user_id` = '294'; 
+UPDATE `users` SET `emp_code` = '101102' WHERE `user_id` = '293'; 
+UPDATE `users` SET `emp_code` = '101103' WHERE `user_id` = '294'; 
+UPDATE `users` SET `login_id` = 'Dawn' WHERE `user_id` = '293'; 
+UPDATE `users` SET `login_id` = 'Umair' WHERE `user_id` = '294'; 
+UPDATE `users` SET `company_id` = '59' WHERE `user_id` = '293'; 
+UPDATE `users` SET `company_id` = '59' WHERE `user_id` = '294';
+
+CREATE TABLE `thesaleforce`.`pjp_plan`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `customer_id` BIGINT(20),
+  `user_id` BIGINT(20),
+  `day` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  `updated_at` DATETIME,
+  `updated_by` BIGINT(20),
+  PRIMARY KEY (`record_id`)
+);
+
+
+4/6/2022 -Abeera
+
+CREATE TABLE `pjp_products` (
+  `product_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_code` varchar(255) DEFAULT NULL,
+  `product_name` varchar(255) DEFAULT NULL,
+  `product_category_id` bigint(20) DEFAULT NULL,
+  `measure_unit` varchar(255) DEFAULT NULL,
+  `unit_price` float DEFAULT NULL,
+  `status` enum('active','deleted') DEFAULT 'active',
+  `company_id` bigint(20) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`product_id`)
+) 
+
+
+
+CREATE TABLE `pjp_products_categories` (
+  `category_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(255) DEFAULT NULL,
+  `status` enum('active','deleted') DEFAULT 'active',
+  `company_id` bigint(20) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`category_id`)
+) 
+
+/////////////////////////////////////// Dawn Gill 4/6/2022
+
+ALTER TABLE `thesaleforce`.`customer_details`   
+  ADD COLUMN `unit` VARCHAR(255) NULL AFTER `deposit`,
+  ADD COLUMN `owner_name` VARCHAR(255) NULL AFTER `unit`,
+  ADD COLUMN `owner_email` VARCHAR(255) NULL AFTER `owner_name`,
+  ADD COLUMN `owner_contact` VARCHAR(255) NULL AFTER `owner_email`,
+  ADD COLUMN `customer_category` VARCHAR(255) NULL AFTER `owner_contact`,
+  ADD COLUMN `ntn` VARCHAR(255) NULL AFTER `customer_category`,
+  ADD COLUMN `strn` VARCHAR(255) NULL AFTER `ntn`,
+  ADD COLUMN `billing_address` VARCHAR(255) NULL AFTER `strn`,
+  ADD COLUMN `shipping_address` VARCHAR(255) NULL AFTER `billing_address`,
+  ADD COLUMN `status` ENUM('active','inactive') DEFAULT 'active'   NULL AFTER `shipping_address`,
+  ADD COLUMN `total_outstanding_receivable_balance` VARCHAR(255) NULL AFTER `status`,
+  ADD COLUMN `overall_credit_limit` VARCHAR(255) NULL AFTER `total_outstanding_receivable_balance`,
+  ADD COLUMN `last_receipt_date` DATETIME NULL AFTER `overall_credit_limit`,
+  ADD COLUMN `last_shipped_order_date` DATETIME NULL AFTER `last_receipt_date`,
+  ADD COLUMN `last_booked_order` DATETIME NULL AFTER `last_shipped_order_date`,
+  ADD COLUMN `customer_referred_by` VARCHAR(255) NULL AFTER `last_booked_order`;
+
+
+ALTER TABLE `thesaleforce`.`pjp_plan`   
+  ADD COLUMN `company_id` BIGINT(20) NULL AFTER `customer_id`;
+
+
+ALTER TABLE `thesaleforce`.`pjp_products`   
+  CHANGE `product_id` `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  CHANGE `company_id` `company_id` BIGINT(20) NULL  AFTER `record_id`,
+  CHANGE `product_code` `product_code` VARCHAR(255) CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL  AFTER `company_id`,
+  CHANGE `product_category_id` `category_id` BIGINT(20) NULL,
+  CHANGE `unit_price` `unit_price` DOUBLE NULL,
+  CHANGE `status` `status` ENUM('active','inactive') CHARSET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'active'   NULL,
+  CHANGE `created_at` `created_at` DATETIME NULL  AFTER `status`;
+
+
+ALTER TABLE `thesaleforce`.`pjp_products_categories`   
+  CHANGE `category_id` `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  CHANGE `company_id` `company_id` BIGINT(20) NULL  AFTER `record_id`,
+  CHANGE `category_name` `category_name` VARCHAR(255) CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL  AFTER `company_id`,
+  CHANGE `status` `status` ENUM('active','inactive') CHARSET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'active'   NULL,
+  CHANGE `created_at` `created_at` DATETIME NULL  AFTER `status`;
+
+RENAME TABLE `thesaleforce`.`pjp_products_categories` TO `thesaleforce`.`pjp_categories`;
+
+//////////////////////////// Dawn //////////////////////////////////////////////////////
+
+CREATE TABLE `thesaleforce`.`pjp_order`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `order_code` VARCHAR(255),
+  `po_number` VARCHAR(255),
+  `total_amount` VARCHAR(255),
+  `discount_limit` VARCHAR(255),
+  `order_amount` VARCHAR(255),
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  `updated_at` DATETIME,
+  `updated_by` BIGINT(20),
+  PRIMARY KEY (`record_id`)
+);
+
+ALTER TABLE `thesaleforce`.`pjp_order`   
+  ADD COLUMN `company_id` BIGINT(20) NULL AFTER `record_id`;
+
+CREATE TABLE `thesaleforce`.`pjp_order_detail`(  
+  `record_id` BIGINT(20),
+  `user_id` BIGINT(20),
+  `company_id` BIGINT(20),
+  `pjp_order_id` BIGINT(20),
+  `pjp_category_id` BIGINT(20),
+  `pjp_product_id` BIGINT(20),
+  `quantity` BIGINT(20),
+  `created_at` DATETIME,
+  `created_by` BIGINT(20)
+);
+
+ALTER TABLE `thesaleforce`.`pjp_order`   
+  ADD COLUMN `user_id` BIGINT(20) NULL AFTER `record_id`;
+
+ALTER TABLE `thesaleforce`.`pjp_order`   
+  ADD COLUMN `status` ENUM('active','inactive') DEFAULT 'active'   NULL AFTER `updated_by`;
+
+ALTER TABLE `thesaleforce`.`pjp_order_detail`   
+  ADD COLUMN `status` ENUM('active','inactive') DEFAULT 'active'   NULL AFTER `created_by`;
+
+ALTER TABLE `thesaleforce`.`pjp_order_detail`   
+  CHANGE `record_id` `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT, 
+  ADD PRIMARY KEY (`record_id`);
+
+
+////////////////////////////////////Zoobia Rafi 8 April 2022
+CREATE TABLE `thesalesforce`.`pjp_plan_details`(  
+  `record_id` BIGINT(10) NOT NULL AUTO_INCREMENT,
+  `user_id` BIGINT(10),
+  `customer_id` BIGINT(10),
+  `day` VARCHAR(20),
+  `created_at` DATETIME,
+  `created_by` BIGINT(10),
+  `updated_at` DATETIME,
+  `updated_by` BIGINT(10),
+  `plan_date` DATETIME,
+  PRIMARY KEY (`record_id`)
+);
+ALTER TABLE `thesalesforce`.`pjp_plan_details`   
+  ADD COLUMN `status` ENUM('pending','completed') NULL AFTER `plan_date`;
+
+////////////////////////////////////// Dawn 4/8/2021////////////////////
+ALTER TABLE `thesaleforce`.`pjp_plan_details`   
+  CHANGE `status` `customer_status` ENUM('pending','completed') CHARSET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'pending'   NULL  AFTER `day`,
+  CHANGE `plan_date` `plan_date` DATETIME NULL  AFTER `customer_status`,
+  ADD COLUMN `status` ENUM('active','inactive') DEFAULT 'active'   NULL AFTER `plan_date`;
+
+copy table from laravel sever and then run change log
+{
+  RENAME TABLE `thesaleforce`.`account_summary` TO `thesaleforce`.`pjp_account_receivable`;
+    
+  RENAME TABLE `thesaleforce`.`ageing_class` TO `thesaleforce`.`pjp_ageing_class`
+
+  ALTER TABLE `thesaleforce`.`pjp_ageing_class`   
+  CHANGE `ageing_id` `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT;
+
+  ALTER TABLE `thesaleforce`.`pjp_account_receivable`   
+  CHANGE `account_summary_id` `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT;
+  
+ALTER TABLE `thesaleforce`.`pjp_account_receivable`   
+  ADD COLUMN `over_due` DOUBLE(20,2) NULL AFTER `aging_days`;
+
+ALTER TABLE `thesaleforce`.`pjp_account_receivable`   
+  ADD COLUMN `company_id` BIGINT(59) NULL AFTER `customer_id`;
+
+  ALTER TABLE `thesaleforce`.`pjp_ageing_class`   
+  ADD COLUMN `company_id` BIGINT(20) NULL AFTER `record_id`;
+
+  ALTER TABLE `thesaleforce`.`pjp_account_receivable`   
+  CHANGE `status` `status` ENUM('active','inactive') DEFAULT 'active'   NULL;
+
+ALTER TABLE `thesaleforce`.`pjp_ageing_class`   
+  CHANGE `status` `status` ENUM('active','inactive') DEFAULT 'active'   NULL;
+
+  ALTER TABLE `thesaleforce`.`department`   
+  CHANGE `status` `status` ENUM('active','inactive') DEFAULT 'active'   NULL,
+  CHANGE `create_at` `created_at` DATETIME NULL,
+  CHANGE `update_at` `updated_at` DATETIME NULL,
+  ADD COLUMN `created_by` BIGINT(20) NULL AFTER `updated_at`,
+  ADD COLUMN `updated_by` BIGINT(20) NULL AFTER `created_by`;
+
+RENAME TABLE `thesaleforce`.`department` TO `thesaleforce`.`pjp_department`;
+
+ALTER TABLE `thesaleforce`.`pjp_department`   
+  CHANGE `department_id` `record_id` INT(11) NOT NULL AUTO_INCREMENT,
+  ADD COLUMN `company_id` BIGINT(20) NULL AFTER `record_id`;
+
+
+}
+
+ALTER TABLE `thesaleforce`.`pjp_order`   
+  ADD COLUMN `product_quantity` BIGINT(20) NULL AFTER `po_number`;
+
+ALTER TABLE `thesaleforce`.`pjp_order`   
+  ADD COLUMN `customer_id` BIGINT(20) NULL AFTER `record_id`;
+
+ALTER TABLE `thesaleforce`.`customer_details`   
+  ADD COLUMN `delivery_address` VARCHAR(255) NULL AFTER `customer_referred_by`;
+
+  CREATE TABLE `thesaleforce`.`pjp_customer_complaints`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `customer_id` BIGINT(20),
+  `company_id` BIGINT(20),
+  `department_id` BIGINT(20),
+  `department_name` VARCHAR(255),
+  `reason` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  PRIMARY KEY (`record_id`)
+);
+
+ALTER TABLE `thesaleforce`.`pjp_customer_complaints`   
+  ADD COLUMN `user_id` BIGINT(20) NULL AFTER `company_id`;
+
+CREATE TABLE `thesaleforce`.`pjp_complaint_image`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `complaint_id` BIGINT(20),
+  `company_id` BIGINT(20),
+  `file_path` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  PRIMARY KEY (`record_id`)
+);
+
+
+
+//////////////// 4/8/22 abeera /////////////
+
+ALTER TABLE `salesforce_demo`.`customer`   
+  ADD COLUMN `ledger_id` VARCHAR(255) NULL AFTER `customer_id`;
+
+///////////////// 4/11/22 Dawn ////////////////////////////////////
+
+CREATE TABLE `thesaleforce`.`pjp_competitor_product`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `competitor_name` VARCHAR(255),
+  `product_name` VARCHAR(255),
+  `description` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  PRIMARY KEY (`record_id`)
+);
+
+ALTER TABLE `thesaleforce`.`pjp_competitor_product`   
+  ADD COLUMN `company_id` BIGINT(20) NULL AFTER `record_id`,
+  ADD COLUMN `customer_id` BIGINT(20) NULL AFTER `company_id`,
+  ADD COLUMN `user_id` BIGINT(20) NULL AFTER `customer_id`;
+
+CREATE TABLE `thesaleforce`.`pjp_competitor_image`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `competitor_id` BIGINT(20),
+  `company_id` BIGINT(20),
+  `file_path` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  `created_by` BIGINT,
+  PRIMARY KEY (`record_id`)
+);
+
+
+CREATE TABLE `thesaleforce`.`pjp_refund`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `order_id` BIGINT(20),
+  `company_id` BIGINT(20),
+  `customer_id` BIGINT(20),
+  `product_id` BIGINT(20),
+  `reason` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  PRIMARY KEY (`record_id`)
+);
+
+ALTER TABLE `thesaleforce`.`pjp_refund`   
+  ADD COLUMN `product_name` VARCHAR(255) NULL AFTER `product_id`,
+  ADD COLUMN `quantity` BIGINT(20) NULL AFTER `product_name`;
+
+ALTER TABLE `thesaleforce`.`pjp_refund`   
+  ADD COLUMN `user_id` BIGINT(20) NULL AFTER `order_id`;
+
+CREATE TABLE `thesaleforce`.`pjp_bank`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `company_id` BIGINT(20),
+  `bank_name` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  PRIMARY KEY (`record_id`)
+);
+
+CREATE TABLE `thesaleforce`.`pjp_payment`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `company_id` BIGINT(20),
+  `customer_id` BIGINT(20),
+  `user_id` BIGINT(20),
+  `type` VARCHAR(255),
+  `bank_id` BIGINT(20),
+  `bank_name` VARCHAR(255),
+  `amount` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  PRIMARY KEY (`record_id`)
+);
+
+CREATE TABLE `thesaleforce`.`pjp_payment_image`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `company_id` BIGINT(20),
+  `payment_id` BIGINT(20),
+  `file_path` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  PRIMARY KEY (`record_id`)
+);
+
+//////////////// 4/18/2022  abeera////////////
+
+ALTER TABLE `salesforce_demo`.`pjp_order`   
+  ADD COLUMN `branch_id` BIGINT(20) NULL AFTER `company_id`;
+
+ALTER TABLE `salesforce_demo`.`pjp_order_detail`   
+  ADD COLUMN `pjp_product_name` VARCHAR(255) NULL AFTER `pjp_product_code`;
+
+ALTER TABLE `salesforce_demo`.`pjp_order_detail`   
+  ADD COLUMN `discount` FLOAT NULL AFTER `quantity`;
+
+ALTER TABLE `salesforce_demo`.`pjp_order_detail`   
+  ADD COLUMN `unit_price` FLOAT NULL AFTER `pjp_product_name`;
+
+ALTER TABLE `thesalesforce`.`pjp_recovery`   
+  ADD COLUMN `instrument_number` VARCHAR(255) NULL AFTER `user_id`;
+
+
+<<<<<<< .mine
+  ALTER TABLE `thesalesforce`.`pjp_recovery`   
+  ADD COLUMN `recovery_date` DATETIME NULL AFTER `bank_name`;
+
+//////////// 13 Apr 2022 Zoobia////////
+||||||| .r15136
+//////////// 13 Apr 2022 Zoobia////////
+=======
+//////////////// 4/21/2022  abeera////////////
+>>>>>>> .r15161
+
+ALTER TABLE `salesforce_demo`.`pjp_order`   
+  CHANGE `status` `status` ENUM('completed','incomplete') CHARSET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'incomplete'   NULL  COMMENT 'incomplete=payment not cleared, complete= payment cleared';

@@ -1,0 +1,363 @@
+
+/* Create table in First database */
+
+create table `bank`(
+	`bank_id` bigint(20) NOT NULL  auto_increment  , 
+	`company_id` bigint(20) NOT NULL   , 
+	`bank_name` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	`updated_at` datetime NULL   , 
+	`updated_by` bigint(20) NULL   , 
+	PRIMARY KEY (`bank_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `bank_product`(
+	`bank_product_id` bigint(20) NOT NULL  auto_increment  , 
+	`company_id` bigint(20) NOT NULL   , 
+	`product_name` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	`updated_at` datetime NULL   , 
+	`updated_by` bigint(20) NULL   , 
+	PRIMARY KEY (`bank_product_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `customer_bank_product`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`bank_id` bigint(20) NULL   , 
+	`company_id` bigint(20) NULL   , 
+	`customer_id` bigint(20) NULL   , 
+	`bank_product1_id` bigint(20) NULL   , 
+	`bank_product2_id` bigint(20) NULL   , 
+	`bank_product3_id` bigint(20) NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `customer_dependent_details`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`customer_id` bigint(20) NOT NULL   , 
+	`company_id` bigint(20) NOT NULL   , 
+	`dependent_name` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`dependent_relationship` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`dependent_phone_no` bigint(20) NULL   , 
+	`dependent_designation` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`dependent_address` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`updated_at` datetime NULL   , 
+	`updated_by` bigint(20) NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `customer_email_history`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`company_id` bigint(20) NULL   , 
+	`customer_id` bigint(20) NULL   , 
+	`user_id` bigint(20) NULL   , 
+	`email_date` datetime NULL   , 
+	`email_content` text COLLATE latin1_swedish_ci NULL   , 
+	`templated_id` bigint(20) NULL   , 
+	`status` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`created_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `customer_introletter_history`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`company_id` bigint(20) NULL   , 
+	`customer_id` bigint(20) NULL   , 
+	`user_id` bigint(20) NULL   , 
+	`introletter_date` datetime NULL   , 
+	`introletter_content` text COLLATE latin1_swedish_ci NULL   , 
+	`templated_id` bigint(20) NULL   , 
+	`status` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`created_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `customer_reference_from_client`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`customer_id` bigint(20) NOT NULL   , 
+	`company_id` bigint(20) NOT NULL   , 
+	`reference_name` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`reference_designation` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`reference_contact_no` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`date_reference_from_client` datetime NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	`updated_at` datetime NULL   , 
+	`updated_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `customer_sms_history`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`company_id` bigint(20) NULL   , 
+	`customer_id` bigint(20) NULL   , 
+	`user_id` bigint(20) NULL   , 
+	`message_date` datetime NULL   , 
+	`message` text COLLATE latin1_swedish_ci NULL   , 
+	`templated_id` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`status` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`created_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `pb_lov`(
+	`pb_lov_id` bigint(20) NOT NULL  auto_increment  , 
+	`company_id` bigint(20) NOT NULL   , 
+	`client_need` enum('saving','transactional','borrowing','security','vehicle','spouse','spending','occupation','priority','marital') COLLATE latin1_swedish_ci NULL   , 
+	`client_need_name` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	`updated_at` datetime NULL   , 
+	`updated_by` bigint(20) NULL   , 
+	`status` enum('1','0') COLLATE latin1_swedish_ci NULL  DEFAULT '1'  , 
+	PRIMARY KEY (`pb_lov_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `rmp_template`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`company_id` bigint(20) NULL   , 
+	`templated_type` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`message` text COLLATE latin1_swedish_ci NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	`status` enum('active','inactive') COLLATE latin1_swedish_ci NULL  DEFAULT 'active'  , 
+	`template_status` enum('sms','intro','email') COLLATE latin1_swedish_ci NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `user_customer`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`user_id` bigint(20) NULL   , 
+	`customer_id` bigint(20) NULL   , 
+	`status` tinyint(4) NULL  DEFAULT '1'  , 
+	PRIMARY KEY (`record_id`) , 
+	KEY `customer_id`(`customer_id`) , 
+	KEY `user_id`(`user_id`,`customer_id`) 
+)Engine=InnoDB DEFAULT CHARSET='utf8';
+
+/* Create table in First database */
+
+create table `users_appraisal`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`user_id` bigint(20) NOT NULL   , 
+	`company_id` bigint(20) NOT NULL   , 
+	`appraisal_year` bigint(20) NULL   , 
+	`rating` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`promotion` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`increment_amount` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`increment_percentage` float NULL   , 
+	`bonus_amount` bigint(20) NULL   , 
+	`bonus_multiple` bigint(20) NULL   , 
+	`salary` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`appraisal_month` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `users_certificate`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`company_id` bigint(20) NOT NULL   , 
+	`user_id` bigint(20) NOT NULL   , 
+	`month` bigint(20) NULL   , 
+	`year` bigint(20) NULL   , 
+	`name_of_degree` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`university` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	`updated_at` datetime NULL   , 
+	`updated_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `users_detail`(
+	`users_detail_id` bigint(20) NOT NULL  auto_increment  , 
+	`user_id` bigint(20) NOT NULL   , 
+	`company_id` bigint(20) NOT NULL   , 
+	`working_status` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`job_status` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`job_nature` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`cnic` bigint(20) NULL   , 
+	`ip_no` bigint(20) NULL   , 
+	`cell_no` bigint(20) NULL   , 
+	`employment_status` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`grade` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`previous_dec_salary` bigint(20) NULL   , 
+	`nature_of_post` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`last_organization` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`last_job` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`category` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`warning_letter` enum('yes','no') COLLATE latin1_swedish_ci NULL  DEFAULT 'no'  , 
+	PRIMARY KEY (`users_detail_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `users_pam_history`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`user_id` bigint(20) NOT NULL   , 
+	`company_id` bigint(20) NOT NULL   , 
+	`pam_history_year` bigint(20) NULL   , 
+	`pam_history_month` bigint(20) NULL   , 
+	`pam_history_outstanding` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`pam_history_excellent` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`pam_history_good` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`pam_history_unsatisfactory` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `users_pam_rating`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`company_id` bigint(20) NOT NULL   , 
+	`user_id` bigint(20) NOT NULL   , 
+	`users_pam_quarter` bigint(20) NULL   , 
+	`year` bigint(20) NULL   , 
+	`month` bigint(20) NULL   , 
+	`country_ranking` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`region_ranking` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`rating` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`score` float NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	`updated_at` datetime NULL   , 
+	`updated_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+/* Create table in First database */
+
+create table `users_quarter`(
+	`record_id` bigint(20) NOT NULL  auto_increment  , 
+	`user_id` bigint(20) NOT NULL   , 
+	`company_id` bigint(20) NOT NULL   , 
+	`users_quarter` bigint(20) NULL   , 
+	`month` bigint(20) NULL   , 
+	`year` bigint(20) NULL   , 
+	`score` float NULL   , 
+	`rating` varchar(255) COLLATE latin1_swedish_ci NULL   , 
+	`created_at` datetime NULL   , 
+	`created_by` bigint(20) NULL   , 
+	`updated_at` datetime NULL   , 
+	`updated_by` bigint(20) NULL   , 
+	PRIMARY KEY (`record_id`) 
+)Engine=InnoDB DEFAULT CHARSET='latin1';
+
+alter table `users` add column `emp_id` bigint (20)  NULL  after `emp_code`;
+
+alter table `customer` change `customer_id` `record_id` bigint (20)  NOT NULL AUTO_INCREMENT ;
+alter table `customer` add column `company_id` bigint (20)  NULL  after `record_id`;
+ alter table `company_branches` add column `city` varchar (255)  NULL  after `branch_name`
+
+
+drop table `customer_details`
+
+CREATE TABLE `customer_details` (                               
+                    `record_id` bigint(20) NOT NULL AUTO_INCREMENT,               
+                    `customer_id` bigint(20) DEFAULT NULL,                        
+                    `id_number` varchar(255) DEFAULT NULL,                        
+                    `email_one` varchar(255) DEFAULT NULL,                        
+                    `dao_branch` varchar(255) DEFAULT NULL,                       
+                    `dao_id` bigint(20) DEFAULT NULL,                             
+                    `branch_code` varchar(255) DEFAULT NULL,                      
+                    `branch_code2` varchar(255) DEFAULT NULL,                     
+                    `branch_name` varchar(255) DEFAULT NULL,                      
+                    `client_id` varchar(255) DEFAULT NULL,                        
+                    `account_title` varchar(255) DEFAULT NULL,                    
+                    `currency` varchar(255) DEFAULT NULL,                         
+                    `rel_manager` varchar(255) DEFAULT NULL,                      
+                    `balance_unit` double(10,4) DEFAULT NULL,                     
+                    `account_balance` varchar(255) DEFAULT NULL,                  
+                    `lcy_avg_balance` varchar(255) DEFAULT NULL,                  
+                    `dt_account_opening` varchar(255) DEFAULT NULL,               
+                    `account_category` varchar(255) DEFAULT NULL,                 
+                    `category_description` varchar(255) DEFAULT NULL,             
+                    `product_category` varchar(255) DEFAULT NULL,                 
+                    `sector` varchar(255) DEFAULT NULL,                           
+                    `sector_description` varchar(255) DEFAULT NULL,               
+                    `dao_group_name` varchar(255) DEFAULT NULL,                   
+                    `un_ver_region` varchar(255) DEFAULT NULL,                    
+                    `average_balance` varchar(255) DEFAULT NULL,                  
+                    `amim` varchar(255) DEFAULT NULL,                             
+                    `ci` varchar(255) DEFAULT NULL,                               
+                    `complete_address` varchar(2048) DEFAULT NULL,                
+                    `customer_details_contact_number` varchar(255) DEFAULT NULL,  
+                    `contact_number_second` varchar(255) DEFAULT NULL,            
+                    `age` bigint(20) unsigned DEFAULT NULL,                       
+                    `update_date` varchar(255) DEFAULT NULL,                      
+                    `dormat` varchar(255) DEFAULT NULL,                           
+                    `amim_volume` varchar(255) DEFAULT NULL,                      
+                    `debit_card` varchar(255) DEFAULT NULL,                       
+                    `hf` varchar(255) DEFAULT NULL,                               
+                    `kafalah` varchar(255) DEFAULT NULL,                          
+                    `lpt` varchar(255) DEFAULT NULL,                              
+                    `average_of_the_month` datetime DEFAULT NULL,                 
+                    `customer_open_date` varchar(255) DEFAULT NULL,               
+                    `business_segment` varchar(255) DEFAULT NULL,                 
+                    `internet_banking` varchar(255) DEFAULT NULL,                 
+                    `sms_alerts` varchar(255) DEFAULT NULL,                       
+                    `ci_volume` varchar(255) DEFAULT NULL,                        
+                    `hf_volume` varchar(255) DEFAULT NULL,                        
+                    `kafalah_volume` varchar(255) DEFAULT NULL,                   
+                    `lpt_volume` varchar(255) DEFAULT NULL,                       
+                    `visa_debit_card` varchar(255) DEFAULT NULL,                  
+                    `master_debit_card` varchar(255) DEFAULT NULL,                
+                    `platinium_card` varchar(255) DEFAULT NULL,                   
+                    `date_received` datetime DEFAULT NULL,                        
+                    `etb` enum('yes','no') DEFAULT 'yes',                         
+                    `designation` varchar(255) DEFAULT NULL,                      
+                    `vehicle` varchar(255) DEFAULT NULL,                          
+                    `spoues` varchar(255) DEFAULT NULL,                           
+                    `no_of_kids` bigint(20) DEFAULT NULL,                         
+                    `spending` varchar(255) DEFAULT NULL,                         
+                    `occupation` varchar(255) DEFAULT NULL,                       
+                    `priority` varchar(255) DEFAULT NULL,                         
+                    `city` varchar(255) DEFAULT NULL,                             
+                    `comments` varchar(255) DEFAULT NULL,                         
+                    `saving_need` varchar(255) DEFAULT NULL,                      
+                    `transactional_need` varchar(255) DEFAULT NULL,               
+                    `brrowing_need` varchar(255) DEFAULT NULL,                    
+                    `security_need` varchar(255) DEFAULT NULL,                    
+                    `marital_status` varchar(255) DEFAULT NULL,                   
+                    `ease` varchar(255) DEFAULT NULL,                             
+                    `deposit` varchar(255) DEFAULT NULL,                          
+                    PRIMARY KEY (`record_id`),                                    
+                    UNIQUE KEY `customer_id` (`customer_id`),                     
+                    KEY `id_number` (`id_number`),                                
+                    KEY `dao_id` (`dao_id`),                                      
+                    KEY `dao_branch` (`dao_branch`),                              
+                    KEY `branch_code` (`branch_code`),                            
+                    KEY `balance_unit` (`balance_unit`),                          
+                    KEY `dao_group_name` (`dao_group_name`)                       
+                  ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8     

@@ -1,0 +1,14 @@
+DELIMITER $$
+
+CREATE
+    /*[DEFINER = { user | CURRENT_USER }]*/
+    PROCEDURE `thesaleforce`.`get_all`(table_name VARCHAR(255),idp VARCHAR(255))
+    BEGIN
+	SET @sql_ =CONCAT('SELECT * FROM ',table_name, ' where ',idp);
+	PREPARE statement_ FROM @sql_;
+	EXECUTE statement_ ;
+	DEALLOCATE PREPARE statement_ ;
+	
+    END$$
+
+DELIMITER ;

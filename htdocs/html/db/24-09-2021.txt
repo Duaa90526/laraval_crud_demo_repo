@@ -1,0 +1,77 @@
+CREATE TABLE `account_opening_form` (
+  `record_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `account_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_husband_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cnic_nicop_passport_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cnic_nicop_passport_no_expiry` date DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_of_guardian` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `relationship` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `guardian_cnic_nicop_passport_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `guardian_cnic_nicop_passport_no_expiry` date DEFAULT NULL,
+  `joint_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `joint_relation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `joint_cnic_nicop_passport_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `joint_cnic_nicop_passport_no_expiry` date DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`record_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+CREATE TABLE `conversion_form` (
+  `record_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `account_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `investor_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cnic_nicop_pasport_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `from_fund_name_unit_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `to_fund_name_unit_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `amounts` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`record_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+CREATE TABLE `investment_form` (
+  `record_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `account_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `investor_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cnic_nicop_passport_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_of_fund` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `amount` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cheque_no_pay_order_no_online_transfer` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bank_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`record_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+CREATE TABLE `redemption_form` (
+  `record_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `account_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `investor_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cnic_nicop_passport_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_of_fund` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `amount` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bank_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `iban` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title_of_account` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`record_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
+
+ALTER TABLE `thesalesforce`.`account_opening_form` ADD COLUMN `company_id` BIGINT(20) NULL AFTER `date`, ADD COLUMN `created_by` BIGINT(20) NULL AFTER `company_id`, ADD COLUMN `created_at` TIMESTAMP NULL AFTER `created_by`, ADD COLUMN `updated_at` DATETIME NULL AFTER `created_at`; 
+
+ALTER TABLE `thesalesforce`.`conversion_form` ADD COLUMN `created_by` BIGINT(20) NULL AFTER `date`, ADD COLUMN `created_at` TIMESTAMP NULL AFTER `created_by`, ADD COLUMN `updated_at` DATETIME NULL AFTER `created_at`; 
+
+ALTER TABLE `thesalesforce`.`conversion_form` ADD COLUMN `company_id` BIGINT(20) NULL AFTER `updated_at`; 
+
+
+ALTER TABLE `thesalesforce`.`investment_form` ADD COLUMN `company_id` BIGINT(20) NULL AFTER `date`, ADD COLUMN `created_at` TIMESTAMP NULL AFTER `company_id`, ADD COLUMN `created_by` BIGINT(20) NULL AFTER `created_at`, ADD COLUMN `upated_at` DATETIME NULL AFTER `created_by`; 
+
+
+ALTER TABLE `thesalesforce`.`redemption_form` ADD COLUMN `company_id` BIGINT(20) NULL AFTER `date`, ADD COLUMN `created_at` TIMESTAMP NULL AFTER `company_id`, ADD COLUMN `created_by` BIGINT(20) NULL AFTER `created_at`, ADD COLUMN `updated_at` DATETIME NULL AFTER `created_by`; 
+
+

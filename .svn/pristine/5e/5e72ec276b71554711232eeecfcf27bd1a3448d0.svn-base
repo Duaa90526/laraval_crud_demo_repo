@@ -1,0 +1,11 @@
+alter table `allied`.`companies` add column `prefix` varchar (255)  NULL  after `created_at`;
+
+
+Note: shift company_id in user table to second number
+
+**********during lead scenario fix***************
+alter table `leads` drop column `lead_status_name`;
+alter table `visit_statuses` add column `priority` int (4)  NULL  after `company_id`, add column `lead_status` bigint (20)  NULL  after `priority`;
+alter table `thesalesforce`.`visit_statuses` add column `title` varchar (255)  NULL  after `name`;
+alter table `thesalesforce`.`visit_statuses` add column `is_followup` enum ("yes","no") DEFAULT 'no' NULL  after `status_type`
+;

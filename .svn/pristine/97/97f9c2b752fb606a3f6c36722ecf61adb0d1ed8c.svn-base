@@ -1,0 +1,102 @@
+/*
+ * It is advised not to edit the smartadmin_production.css
+ * as this will override any changes you make in the 
+ * later versions of this theme. 
+ * 
+ * We advise that you use use this CSS to override 
+ * SmartAdmin styles. 
+ * 
+ * Rename the stylesheet to whatever your liking so it will stay
+ * unique to you with each update of SmartAdmin.
+ */
+
+/*
+ * INDEX
+ * 
+ * - HTML
+ * - BODY
+ * - CUSTOM STYLES
+ */
+ 
+ 
+ label.s-week
+ {
+ display:block;
+}
+.form-control.ww
+{
+	float: left;
+    width: 47%;
+    margin-right: 14px;
+}
+.form-control.dd
+{
+	float: left;
+    margin-right: 0 !important;
+    padding: 0 0 0 10px;
+    width: 44.4%;
+}
+.form-control.ww1
+{
+	float: left;
+    width: 49%;
+    margin-right: 14px;
+}
+.form-control.dd1
+{
+	float: left;
+    width: 46% !important;
+    margin-right: 0 !important;
+}
+.form-group.margin {
+    /* display: table; */
+    margin: 7px 0 0 !important;
+}
+.medical {
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100px;
+}
+.province , .city , .select-area , .medical-rep {
+    height: 25px;
+    margin: 25px 5px 0 0;
+    width: 100px;
+}
+.select-area
+{
+	width:140px;
+}
+.medical-rep
+{
+	width:181px;
+}
+.view-app {
+    background: #252525 none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+    font-size: 12px;
+    height: 25px;
+    padding: 0;
+    width: 120px;
+	box-shadow:0 0 0 0 #fff inset;
+	transition:all 0.4s ease-in-out;
+}
+.view-app:hover
+{
+	box-shadow:0 200px 0 0 #fff inset;
+	color:#252525;
+}
+.page-title.txt-color-blueDark {
+    margin-bottom: 0;
+    margin-top: 25px;
+    padding-bottom: 0;
+}
+.form-group > label {
+    padding: 0 0 0 8px;
+}
+#med_rep {
+    float: left;
+    margin: 0 14px 0 10px;
+    width: 45%;
+}

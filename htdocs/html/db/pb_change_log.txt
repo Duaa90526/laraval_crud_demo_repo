@@ -1,0 +1,157 @@
+///////////// 3/4/2022
+
+CREATE TABLE `users_warning_letter` (
+  `record_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `company_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `warning_date` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `created_by` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`record_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+
+
+ALTER TABLE `thesaleforce`.`users_detail`   
+  ADD COLUMN `created_at` DATETIME NULL AFTER `warning_letter`,
+  ADD COLUMN `created_by` BIGINT(20) NULL AFTER `created_at`;
+
+
+
+  ALTER TABLE `thesaleforce`.`users_pam_history`   
+  ADD COLUMN `updated_at` DATETIME NULL AFTER `created_by`,
+  ADD COLUMN `updated_by` BIGINT(20) NULL AFTER `updated_at`;
+
+CREATE TABLE `branch_head_count` (
+  `record_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `branch_id` bigint(20) DEFAULT NULL,
+  `company_id` bigint(20) DEFAULT NULL,
+  `branch_code` bigint(20) DEFAULT NULL,
+  `approved_pbm` bigint(20) DEFAULT NULL,
+  `actual_pbm` bigint(20) DEFAULT NULL,
+  `variance_pbm` bigint(20) DEFAULT NULL,
+  `approved_pbo` bigint(20) DEFAULT NULL,
+  `actual_pbo` bigint(20) DEFAULT NULL,
+  `variance_pbo` bigint(20) DEFAULT NULL,
+  `approved_slots` bigint(20) DEFAULT NULL,
+  `actual_staffs` bigint(20) DEFAULT NULL,
+  `total_vacant_staff` bigint(20) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `created_by` bigint(20) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `updated_by` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`record_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4
+
+
+ALTER TABLE `thesaleforce`.`users_appraisal`   
+  ADD COLUMN `updated_at` DATETIME NULL AFTER `appraisal_month`,
+  ADD COLUMN `updated_by` BIGINT(20) NULL AFTER `updated_at`,
+  ADD COLUMN `created_at` DATETIME NULL AFTER `updated_by`,
+  ADD COLUMN `created_by` BIGINT(20) NULL AFTER `created_at`;
+
+
+//////////////////////////////////////// PB big change in customer////////////////////////
+
+ALTER TABLE `thesaleforce`.`customer`   
+  ADD COLUMN `pb_code` VARCHAR(255) NULL AFTER `client_profile`;
+
+////////////////// umair quadri////////////////////////////////////////
+
+ALTER TABLE `thesalesforce`.`pjp_recovery`   
+  ADD COLUMN `instrument_number` VARCHAR(255) NULL AFTER `user_id`;
+
+
+  ALTER TABLE `thesalesforce`.`pjp_recovery`   
+  ADD COLUMN `recovery_date` DATETIME NULL AFTER `bank_name`;
+
+//////////////////// Dawn 4/27/2021 ///////////////////////////////
+
+CREATE TABLE `thesaleforce`.`curriculum_vitae_detail`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `company_id` BIGINT(20),
+  `curriculum_vitae_id` BIGINT(20),
+  `type` ENUM('fresh','experience','internal'),
+  `description` VARCHAR(255),
+  `created_at` DATETIME,
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  PRIMARY KEY (`record_id`)
+);
+
+CREATE TABLE `thesaleforce`.`customer_sector_code`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `company_id` BIGINT(20),
+  `sector_code` BIGINT(20),
+  `sector_name` VARCHAR(255),
+  `created_at` DATETIME,
+  PRIMARY KEY (`record_id`)
+);
+
+ALTER TABLE `thesaleforce`.`customer_sector_code`   
+  CHANGE `sector_code` `sector_code` VARCHAR(255) NULL;
+
+CREATE TABLE `thesaleforce`.`rmp_product_template`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `company_id` BIGINT(20),
+  `user_id` BIGINT(20),
+  `product_id` BIGINT(20),
+  `product_name` VARCHAR(255),
+  `message` TEXT,
+  `created_at` DATETIME,
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  PRIMARY KEY (`record_id`)
+);
+
+ALTER TABLE `thesaleforce`.`rmp_product_template`   
+  ADD COLUMN `created_by` BIGINT(20) NULL AFTER `status`;
+
+CREATE TABLE `thesaleforce`.`custom_suggested_product`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `product_id` BIGINT(20),
+  `customer_id` BIGINT(20),
+  `company_id` BIGINT(20),
+  `product_name` VARCHAR(255),
+  `cc` VARCHAR(255),
+  `bcc` VARCHAR(255),
+  `subject` VARCHAR(255),
+  `email_content` VARCHAR(255),
+  `email_date` DATETIME,
+  `created_at` DATETIME,
+  `created_by` BIGINT(20),
+  `user_id` BIGINT(20),
+  `status` ENUM('pending','sent') DEFAULT 'pending',
+  PRIMARY KEY (`record_id`)
+);
+
+ALTER TABLE `thesaleforce`.`custom_suggested_product`   
+  ADD COLUMN `template_id` BIGINT(20) NULL AFTER `status`;
+
+
+ALTER TABLE `thesaleforce`.`custom_suggested_product`   
+  ADD COLUMN `probability` VARCHAR(255) NULL AFTER `template_id`;
+
+CREATE TABLE `thesaleforce`.`customer_product`(  
+  `record_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `company_id` BIGINT(20),
+  `user_id` BIGINT(20),
+  `product_id` BIGINT(20),
+  `product_name` VARCHAR(255),
+  `probability` VARCHAR(255),
+  `status` ENUM('active','inactive') DEFAULT 'active',
+  `created_at` DATETIME,
+  PRIMARY KEY (`record_id`)
+);
+
+ALTER TABLE `thesaleforce`.`customer_product`   
+  ADD COLUMN `customer_id` BIGINT(20) NULL AFTER `created_at`;
+
+ALTER TABLE `thesaleforce`.`customer_product`   
+  ADD COLUMN `email_status` ENUM('pending','sent') DEFAULT 'pending'   NULL AFTER `customer_id`;
+
+RENAME TABLE `thesaleforce`.`custom_suggested_product` TO `thesaleforce`.`custom_suggested_emailt`;
+
+RENAME TABLE `thesaleforce`.`custom_suggested_emailt` TO `thesaleforce`.`custom_suggested_email`;
+
+
+RENAME TABLE `thesaleforce`.`customer_product` TO `thesaleforce`.`customer_suggestion_product`;
+
